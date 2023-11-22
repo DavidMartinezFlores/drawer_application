@@ -1,3 +1,4 @@
+import 'package:drawer_application/screens/primary_screen.dart';
 import 'package:drawer_application/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavigationDrawerPersonal(),
+      drawer: const NavigationDrawerPersonal(),
       appBar: AppBar(
         title: const Center(child: Text("DRAWER")),
       ),
@@ -40,13 +41,13 @@ class _NavigationDrawerPersonalState extends State<NavigationDrawerPersonal> {
         });
         Navigator.pop(context);
         if(value==0){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const PrimaryScreen()));
         }
         if(value==1){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const SecondScreen()));
         }
       },
-      children: [
+      children: const [
         NavigationDrawerDestination(icon: Icon(Icons.add), label: Text("PRIMERO")),
         NavigationDrawerDestination(icon: Icon(Icons.add), label: Text("SEGUNDO"))
       ],
